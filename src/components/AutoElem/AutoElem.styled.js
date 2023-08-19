@@ -30,6 +30,7 @@ line-height: 18px;
   }`
 
 export const ButtonLearnMore = s.button`
+margin-top: 28px;
 width: 274px;
 height: 44px;
 justify-content: center;

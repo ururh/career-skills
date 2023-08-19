@@ -1,14 +1,26 @@
-import React, { useState, useMemo } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useMemo, useEffect } from 'react';
 import AutoList from '../components/AutoList/AutoList';
 import Filter from '../components/Filter/Filter';
+import { getAdvertsCars } from 'services/api';
 
-const Catalog = ({ carsList }) => {
+const Catalog = () => {
+      const [carsList, setCarsList] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const items = await getAdvertsCars();
+      if (items) {
+          setCarsList(items);
+      }
+    })();
+  }, []);
+  
   const [filteredCars, setFilteredCars] = useState(carsList);
   const [makeFilter, setMakeFilter] = useState('');
   const [rentalPriceFilter, setRentalPriceFilter] = useState('');
   const [mileageFilter, setMileageFilter] = useState({ from: '', to: '' });
   const [searchClicked, setSearchClicked] = useState(false);
+
 
   useMemo(() => {
     let filteredCarsList = carsList;
@@ -48,10 +60,6 @@ const Catalog = ({ carsList }) => {
       <AutoList carsList={filteredCars} />
     </>
   );
-};
-
-Catalog.propTypes = {
-  carsList: PropTypes.array.isRequired
 };
 
 export default Catalog;

@@ -1,24 +1,12 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-import { getAdvertsCars } from '../services/api';
 
 const Home = lazy(() => import('./Home'));
 const Favorites = lazy(() => import('./Favorites'));
 const Catalog = lazy(() => import('./Catalog'));
 
 const AppRoutes = () => {
-
-  const [carsList, setCarsList] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const items = await getAdvertsCars();
-      if (items) {
-          setCarsList(items);
-      }
-    })();
-  }, []);
 
   return (
     <BrowserRouter>
@@ -32,8 +20,9 @@ const AppRoutes = () => {
           />
           <Route
             path="/catalog"
-            element={<Catalog carsList={carsList}/>}
+            element={<Catalog/>}
           />
+          <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

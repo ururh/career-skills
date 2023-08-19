@@ -11,8 +11,10 @@ const AutoElem = ({ car }) => {
     const location = address.substring(address.indexOf(',') + 1, address.length).split(',');
     const prettifiedMileage = String(mileage).slice(0, 1) + ',' + String(mileage).slice(1);
 
+const firstFunctionality = functionalities[0].length > 10 ? functionalities[0].slice(0, 10) + '...' : functionalities[0];
+  
     const info = [location[0].trim(), location[1].trim(), 
-        rentalCompany, type, prettifiedMileage, id, functionalities[0]];
+        rentalCompany, type, prettifiedMileage, id, firstFunctionality];
 
   const [showModal, setShowModal] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
