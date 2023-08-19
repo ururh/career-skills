@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { BlueSpan, ButtonLearnMore, ButtonLike, DivMain, Img, InfoSpan, TextSpan } from './AutoElem.styled';
@@ -31,18 +31,18 @@ const AutoElem = ({ car }) => {
     setShowModal(false);
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-  };
+const handleKeyDown = useCallback((event) => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+}, [closeModal]);
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleKeyDown]);
+useEffect(() => {
+  window.addEventListener('keydown', handleKeyDown);
+  return () => {
+    window.removeEventListener('keydown', handleKeyDown);
+  };
+}, [handleKeyDown]);
 
     const handleLikeClick = () => {
       setIsLiked(!isLiked);
