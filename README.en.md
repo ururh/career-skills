@@ -1,105 +1,56 @@
-# React homework template
+Створити застосунок для компанії, що надає послуги надання в Україні автомобілів
+в оренду. Застосунок складається з 3х сторінок:
 
-This project was created with
-[Create React App](https://github.com/facebook/create-react-app). To get
-acquainted and configure additional features
-[refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+домашня сторінка з загальним описом послуг, що надає компанія. Стилізація та
+оформлення на ваш розсуд. сторінка, що містить каталог автівок різної
+комплектації, які користувач може фільтрувати за маркою, ціною за годину оренди
+авто та кількістю кілометрів, яку подолав автомобіль під час його експлуатації
+(пробіг). сторінка з оголошеннями, які були додані користувачем в улюблені
+Зовнішній вигляд програми повинен складатися з cайдбару та області перегляду.
+Технічне завдання
 
-## Creating a repository by template
+Відповідно до макету реалізувати картку оголошення про здачу авто в оренду. На
+першій сторінці каталогу має рендеритися 8 оголошень, а їх решта - по кліку на
+кнопку Load more. У разі кліку по кнопці у вигляді “серця” на картці оголошення
+воно має додаватися до списку улюблених, а колір кнопки змінюватися. При
+оновленні сторінки має фіксуватись кінцевий результат дій користувача. Тобто,
+якщо додати оголошення в улюблені та оновити сторінку - то кнопка все одно
+залишається в стані “улюбленого оголошення” із відповідним кольором. У разі
+повторного кліку по кнопці у вигляді “серця” оголошення повинно бути видалене зі
+списку улюблених, а колір кнопки змінитись до початкового стану. У разі кліку по
+кнопці Learn more має відкриватись модальне вікно з детальною інформацією про
+авто та умови його оренди. Модальне вікно повинно закриватись по кліку на кнопку
+у вигляді “хрестика”, по кліку на backdrop або натисканню на клавішу Esc. В коді
+пробіг авто має бути прописаний одним значенням (наприклад, 4500). В UI -
+виведено через кому (4,500). Кнопку Rental car слід реалізувати як посилання, що
+надаватиме можливість користувачу зʼєднатись з компанією за номером телефону
++380730000000. Створи маршрутизацію, використовуючи React Router. У застосунку
+повинні бути такі маршрути:
 
-Use this GoIT repository as a template for creating a repository
-of your project. To use it just tap the `«Use this template»` button and choose
-`«Create a new repository»` option, as you can see on the image below.
+“/” - домашня сторінка з загальним описом послуг, що надає компанія “/catalog” -
+сторінка, що містить каталог автівок різної комплектації “/favorites” - сторінка
+з оголошеннями, які були додані користувачем в улюблені Якщо користувач зайшов
+за маршрутом, якого не існує, його необхідно перенаправляти на домашню сторінку.
+Для роботи зі списком оголошень створи свій персональний бекенд для розробки за
+допомогою UI-сервісу https://mockapi.io/. Створи ресурс adverts. Використай
+конструктор ресурсу та опиши об'єкт оголошення, як описано нижче.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+Advert
 
-The page for creating a new repository will open on the next step. Fill out
-the Name field and make sure the repository is public, then click
-`«Create repository from template»` button.
+Створіть advert в Mockapi з наступними полями: id, year, make, model, type, img,
+description, fuelConsumption, engineSize, accessories, functionalities,
+rentalPrice, rentalCompany, address, rentalConditions, mileage (див. скріншот
+нижче). Для наповнення колекції можна взяти adverts.json json Зображення авто
+можете підібрати самостійно. В базі має бути від 32 оголошень з різними
+значеннями (на ваш розсуд). Реалізована пагінація, де одна сторінка пагінації
+повинна вміщати 8 оголошень. Додаткове завдання Додай фільтрацію: dropdown із
+марками автомобіля makes.json - показати оголошення з автівками відповідної
+марки dropdown із цінами за годину оренди авто (крок 10$) - показати оголошення
+з автівками, ціна за оренду яких належить до діапазону цін, обраних користувачем
+група inputів для визначення діапазону пробігу, в межах якого користувач
+шукатиме оголошення
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
-
-You now have a personal project repository, having a repository-template file 
-and folder structure. After that, you can work with it as you would with any 
-other private repository: clone it on your computer, write code, commit, and 
-send it to GitHub.
-
-## Preparing for coding
-
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
-
-## Deploy
-
-The production version of the project will automatically be linted, built, and
-deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Deployment status
-
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
-
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
-
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Live page
-
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+Критерії виконання ● Верстка фіксована в рх, семантична та валідна. ● Немає
+помилок в консолі браузера. ● Інтерактивність працює відповідно до технічного
+завдання. ● Код відформатований та без коментарів. ● В репозиторії має бути
+описаний README.md. ● Проєкт задеплоїний на github pages або netlify.com.
