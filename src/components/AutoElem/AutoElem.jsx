@@ -42,7 +42,7 @@ const AutoElem = ({ car }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [handleKeyDown]);
 
     const handleLikeClick = () => {
       setIsLiked(!isLiked);
