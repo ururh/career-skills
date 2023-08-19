@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/career-skills/static/css/main.e1db5415.css",
+    "main.js": "/career-skills/static/js/main.ae5b90e5.js",
+    "static/js/969.162646c5.chunk.js": "/career-skills/static/js/969.162646c5.chunk.js",
+    "static/js/667.8864604c.chunk.js": "/career-skills/static/js/667.8864604c.chunk.js",
+    "static/js/250.11ccbc74.chunk.js": "/career-skills/static/js/250.11ccbc74.chunk.js",
+    "static/media/car-home.jpg": "/career-skills/static/media/car-home.1169ae33f5ed8d230572.jpg",
+    "index.html": "/career-skills/index.html",
+    "main.e1db5415.css.map": "/career-skills/static/css/main.e1db5415.css.map",
+    "main.ae5b90e5.js.map": "/career-skills/static/js/main.ae5b90e5.js.map",
+    "969.162646c5.chunk.js.map": "/career-skills/static/js/969.162646c5.chunk.js.map",
+    "667.8864604c.chunk.js.map": "/career-skills/static/js/667.8864604c.chunk.js.map",
+    "250.11ccbc74.chunk.js.map": "/career-skills/static/js/250.11ccbc74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1db5415.css",
+    "static/js/main.ae5b90e5.js"
+  ]
+}
