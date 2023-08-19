@@ -23,13 +23,13 @@ const AutoElem = ({ car }) => {
     setIsLiked(isFavorite);
   }, [id]);
 
-  const openModal = () => {
+  const openModal = useCallback(() => {
     setShowModal(true);
-  };
+  },[]);
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+const closeModal = useCallback(() => {
+  setShowModal(false);
+}, []);
 
 const handleKeyDown = useCallback((event) => {
   if (event.key === 'Escape') {
